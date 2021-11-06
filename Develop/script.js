@@ -50,10 +50,24 @@ function generatePassword() {
     return "";
   }
 
+  var spagetti = ""
   // generate the password based off the criteria
-
+for (let i = 0; i < length; i++) {
+  if (useLowercase) {
+    spagetti += getRandom(lowercase)
+  }
+  if (useUppercase) {
+    spagetti += getRandom(uppercase)
+  }
+  if (useNumeric) {
+    spagetti += getRandom(numeric)
+  }
+  if (useSpecial) {
+    spagetti += getRandom(special)
+  }
+}
   // `return` that password
-  return "Avery";
+  return spagetti.substr(0,length);
 }
 
 // Add event listener to generate button
